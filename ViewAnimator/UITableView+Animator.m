@@ -19,7 +19,7 @@
         NSIndexPath *indexPath = [self indexPathForCell:obj];
 
         if (indexPath.section == section) {
-            [visibleCells addObject:obj];
+            [visibleCellsInsection addObject:obj];
         }
     }];
 
