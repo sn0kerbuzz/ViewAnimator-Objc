@@ -10,20 +10,20 @@
 
 @implementation UITableView (Animator)
 
-- (NSArray<UITableViewCell *> *)visibleCellsInsection:(NSInteger)section{
+- (NSArray<UITableViewCell *> *)visibleCellsInSection:(NSInteger)section{
     NSArray *visibleCells = self.visibleCells;
 
-    NSMutableArray *visibleCellsInsection = [NSMutableArray array];
+    NSMutableArray *visibleCellsInSection = [NSMutableArray array];
 
     [visibleCells enumerateObjectsUsingBlock:^(UITableViewCell *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSIndexPath *indexPath = [self indexPathForCell:obj];
 
         if (indexPath.section == section) {
-            [visibleCellsInsection addObject:obj];
+            [visibleCellsInSection addObject:obj];
         }
     }];
 
-    return visibleCellsInsection;
+    return visibleCellsInSection;
 }
 
 @end

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UITableView (Animator)
 
-- (NSArray<UITableViewCell *> *)visibleCellsInsection:(NSInteger)section;
+- (NSArray<UITableViewCell *> *)visibleCellsInSection:(NSInteger)section;
 
 @end
 
