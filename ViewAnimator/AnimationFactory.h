@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AnimationFactory : NSObject
 
-+ (Animation *)fromAnimationWith:(Direction)direction offset:(CGFloat)offset;
++ (Animation *)fromAnimationWith:(FromAnimationDirection)direction offset:(CGFloat)offset;
 
 + (Animation *)zoomAnimationWithScale:(CGFloat)scale;
 

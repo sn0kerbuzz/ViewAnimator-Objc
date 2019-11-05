@@ -10,17 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-enum Direction {
-    left,
-    right,
-    bottom,
-    top,
+typedef NS_ENUM(NSUInteger, FromAnimationDirection) {
+    FromAnimationDirectionLeft,
+    FromAnimationDirectionRight,
+    FromAnimationDirectionBottom,
+    FromAnimationDirectionTop
 };
-typedef enum Direction Direction;
 
 @interface FromAnimation : Animation
 
-- (instancetype)initWithDirection:(Direction)direction offset:(CGFloat)offset;
+- (instancetype)initWithDirection:(FromAnimationDirection)direction offset:(CGFloat)offset;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Animation.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (ViewAnimator)
-- (void)animateAnimations:(NSArray <Animation *>*)animations
+- (void)animateAnimations:(NSArray<Animation *> *)animations
                  reversed:(BOOL)reversed
                  initialAlpha:(CGFloat)initialAlpha
                finalAlpha:(CGFloat)finalAlpha
@@ -22,8 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
                   options:(UIViewAnimationOptions)options
                completion:(void(^)(void))completion;
 
-+ (void)animateViews:(NSArray <UIView *>*)views
-                animations:(NSArray <Animation *>*)animations
++ (void)animateViews:(NSArray<UIView *> *)views
+                animations:(NSArray<Animation *> *)animations
                  reversed:(BOOL)reversed
              initialAlpha:(CGFloat)initialAlpha
                finalAlpha:(CGFloat)finalAlpha

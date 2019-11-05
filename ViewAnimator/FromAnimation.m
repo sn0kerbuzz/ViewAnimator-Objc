@@ -10,20 +10,23 @@
 
 @implementation FromAnimation
 
-- (instancetype)initWithDirection:(Direction)direction offset:(CGFloat)offset{
-    int sign;
+- (instancetype)initWithDirection:(FromAnimationDirection)direction offset:(CGFloat)offset{
+    NSInteger sign;
+
     CGAffineTransform  transform;
-    if (direction == left||direction == top) {
+
+    if (direction == FromAnimationDirectionLeft || direction == FromAnimationDirectionTop) {
         sign = -1;
-    }else{
+    } else {
         sign = 1;
     }
-    if (direction == left||direction == right) {
-        transform = CGAffineTransformMakeTranslation(offset * sign,0);
-        
-    }else{
-        transform = CGAffineTransformMakeTranslation(0,offset * sign);
+
+    if (direction == FromAnimationDirectionLeft || direction == FromAnimationDirectionRight) {
+        transform = CGAffineTransformMakeTranslation(offset * sign, 0);
+    } else {
+        transform = CGAffineTransformMakeTranslation(0, offset * sign);
     }
+    
     return [self initWithTransform:transform];
 }
 @end

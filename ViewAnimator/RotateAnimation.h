@@ -11,7 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RotateAnimation : Animation
+
 - (instancetype)initWithAngle:(CGFloat)angle;
+
 @end
 
 NS_ASSUME_NONNULL_END

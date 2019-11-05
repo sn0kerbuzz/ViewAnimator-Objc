@@ -10,17 +10,17 @@
 
 @implementation AnimationFactory
 
-+ (Animation *)fromAnimationWith:(Direction)direction offset:(CGFloat)offset{
++ (Animation *)fromAnimationWith:(FromAnimationDirection)direction offset:(CGFloat)offset {
 
     return [[FromAnimation alloc] initWithDirection:direction offset:offset];
 }
 
-+ (Animation *)zoomAnimationWithScale:(CGFloat)scale{
++ (Animation *)zoomAnimationWithScale:(CGFloat)scale {
     
     return [[ZoomAnimation alloc] initWithScale:scale];
 }
 
-+ (Animation *)rotateAnimationWithAngle:(CGFloat)angle{
++ (Animation *)rotateAnimationWithAngle:(CGFloat)angle {
     
     return [[RotateAnimation alloc] initWithAngle:angle];
 }

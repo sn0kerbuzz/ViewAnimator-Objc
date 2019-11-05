@@ -9,12 +9,21 @@
 #import "UITableView+Animator.h"
 
 @implementation UITableView (Animator)
-- (NSArray <UITableViewCell *>*)visibleCellsInsection:(NSInteger)section{
-    NSArray *array = self.visibleCells;
-    NSMutableArray*sArray = [NSMutableArray array];
-    [array enumerateObjectsUsingBlock:^(UITableViewCell *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [self indexPathForCell:obj].section != section?:[sArray addObject:obj];
+
+- (NSArray<UITableViewCell *> *)visibleCellsInsection:(NSInteger)section{
+    NSArray *visibleCells = self.visibleCells;
+
+    NSMutableArray *visibleCellsInsection = [NSMutableArray array];
+
+    [visibleCells enumerateObjectsUsingBlock:^(UITableViewCell *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSIndexPath *indexPath = [self indexPathForCell:obj];
+
+        if (indexPath.section == section) {
+            [visibleCells addObject:obj];
+        }
     }];
-    return sArray;
+
+    return visibleCellsInsection;
 }
+
 @end

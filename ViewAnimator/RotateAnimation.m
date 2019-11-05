@@ -9,8 +9,11 @@
 #import "RotateAnimation.h"
 
 @implementation RotateAnimation
-- (instancetype)initWithAngle:(CGFloat)angle{
+
+- (instancetype)initWithAngle:(CGFloat)angle {
+
     CGAffineTransform  transform = CGAffineTransformMakeRotation(angle);
+
     return [[RotateAnimation alloc] initWithTransform:transform];
 }
 @end

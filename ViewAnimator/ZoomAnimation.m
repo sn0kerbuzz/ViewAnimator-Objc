@@ -9,8 +9,12 @@
 #import "ZoomAnimation.h"
 
 @implementation ZoomAnimation
-- (Animation *)initWithScale:(CGFloat)scale{
+
+- (Animation *)initWithScale:(CGFloat)scale {
+
     CGAffineTransform  transform = CGAffineTransformMakeScale(scale,scale);
+    
     return [self initWithTransform:transform];
 }
+
 @end

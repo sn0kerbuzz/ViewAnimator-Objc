@@ -9,21 +9,35 @@
 #import "UICollectionView+Animator.h"
 
 @implementation UICollectionView (Animator)
-- (NSArray <UICollectionViewCell *>*)visibleCellsInsection:(NSInteger)section{
-    NSArray *array = self.visibleCells;
-    NSMutableArray*sArray = [NSMutableArray array];
-    [array enumerateObjectsUsingBlock:^(UICollectionViewCell *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [self indexPathForCell:obj].section != section?:[sArray addObject:obj];
+
+- (NSArray<UICollectionViewCell *> *)visibleCellsInsection:(NSInteger)section{
+
+    NSArray *visibleCells = self.visibleCells;
+
+    NSMutableArray *visibleCellsInSection = [NSMutableArray array];
+
+    [visibleCells enumerateObjectsUsingBlock:^(UICollectionViewCell *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSIndexPath *indexPath = [self indexPathForCell:obj];
+
+        if (indexPath.section == section) {
+            [visibleCellsInsection addObject:obj];
+        }
     }];
-    return sArray;
+
+    return visibleCellsInSection;
 }
-- (NSArray <UICollectionViewCell *>*)orderedVisibleCells{
-    NSArray *array = [self visibleCells];
-    NSArray *sortedIndexPaths = [array sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        NSIndexPath *path1 = (NSIndexPath *)[self indexPathForCell:obj1];
-        NSIndexPath *path2 = (NSIndexPath *)[self indexPathForCell:obj2];
+
+-(NSArray<UICollectionViewCell *> *)orderedVisibleCells{
+
+    NSArray *visibleCells = self.visibleCells;
+
+    NSArray *sortedVisibleCells = [visibleCells sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSIndexPath *path1 = [self indexPathForCell:obj1];
+        NSIndexPath *path2 = [self indexPathForCell:obj2];
+
         return [path1 compare:path2];
     }];
-    return sortedIndexPaths;
+
+    return sortedVisibleCells;
 }
 @end

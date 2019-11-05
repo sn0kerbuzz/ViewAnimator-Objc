@@ -9,7 +9,7 @@
 #import "UIView+ViewAnimator.h"
 
 @implementation UIView (ViewAnimator)
-- (void)animateAnimations:(NSArray <Animation *>*)animations
+- (void)animateAnimations:(NSArray<Animation *> *)animations
                  reversed:(BOOL)reversed
              initialAlpha:(CGFloat)initialAlpha
                finalAlpha:(CGFloat)finalAlpha
@@ -38,8 +38,8 @@
     }];
 }
 
-+ (void)animateViews:(NSArray <UIView *>*)views
-          animations:(NSArray <Animation *>*)animations
++ (void)animateViews:(NSArray<UIView *> *)views
+          animations:(NSArray<Animation *> *)animations
             reversed:(BOOL)reversed
         initialAlpha:(CGFloat)initialAlpha
           finalAlpha:(CGFloat)finalAlpha

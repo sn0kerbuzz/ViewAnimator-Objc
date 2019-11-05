@@ -11,7 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UITableView (Animator)
-- (NSArray <UITableViewCell *>*)visibleCellsInsection:(NSInteger)section;
+
+- (NSArray<UITableViewCell *> *)visibleCellsInsection:(NSInteger)section;
+
 @end
 
 NS_ASSUME_NONNULL_END
