@@ -13,7 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UICollectionView (Animator)
 
 - (NSArray<UICollectionViewCell *> *)orderedVisibleCells;
+
 - (NSArray<UICollectionViewCell *> *)visibleCellsInsection:(NSInteger)section;
+- (NSArray<UICollectionViewCell *> *)orderedVisibleCellsInSection:(NSInteger)section;
 
 @end
 

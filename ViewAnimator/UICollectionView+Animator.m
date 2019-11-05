@@ -27,6 +27,19 @@
     return visibleCellsInSection;
 }
 
+- (NSArray<UICollectionViewCell *> *)orderedVisibleCellsInSection:(NSInteger)section {
+	NSArray *visibleCellsInSection = [self visibleCellsInsection:section];
+
+	NSArray *orderedVisibleCellsInSection = [visibleCellsInSection sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSIndexPath *path1 = [self indexPathForCell:obj1];
+        NSIndexPath *path2 = [self indexPathForCell:obj2];
+
+        return [path1 compare:path2];
+    }];
+
+    return orderedVisibleCellsInSection;
+}
+
 -(NSArray<UICollectionViewCell *> *)orderedVisibleCells{
 
     NSArray *visibleCells = self.visibleCells;
