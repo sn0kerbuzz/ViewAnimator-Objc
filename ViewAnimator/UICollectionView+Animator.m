@@ -18,7 +18,7 @@
     return sArray;
 }
 - (NSArray <UICollectionViewCell *>*)orderedVisibleCells{
-    NSArray *array = [self indexPathsForVisibleItems];
+    NSArray *array = [self visibleCells];
     NSArray *sortedIndexPaths = [array sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSIndexPath *path1 = (NSIndexPath *)[self indexPathForCell:obj1];
         NSIndexPath *path2 = (NSIndexPath *)[self indexPathForCell:obj2];
