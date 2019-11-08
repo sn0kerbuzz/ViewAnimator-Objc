@@ -34,7 +34,9 @@
         self.transform = reversed ? transformTo : transformFrom;
         self.alpha = finalAlpha;
     } completion:^(BOOL finished) {
-        completion();
+        if (completion != nil) {
+            completion();
+        }
     }];
 }
 
@@ -71,7 +73,10 @@
     }
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         NSLog(@"%@---全部结束。。。",[NSThread currentThread]);
-        completion();
+
+        if (completion != nil) {
+            completion();
+        }
     });
 }
     
