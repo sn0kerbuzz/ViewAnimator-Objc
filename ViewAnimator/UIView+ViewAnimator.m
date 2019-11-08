@@ -9,7 +9,7 @@
 #import "UIView+ViewAnimator.h"
 
 @implementation UIView (ViewAnimator)
-- (void)animateAnimations:(NSArray<Animation *> *)animations
+- (void)animateAnimations:(nullable NSArray<Animation *> *)animations
                  reversed:(BOOL)reversed
              initialAlpha:(CGFloat)initialAlpha
                finalAlpha:(CGFloat)finalAlpha
@@ -18,7 +18,7 @@
              dampingRatio:(CGFloat)dampingRatio
                  velocity:(CGFloat)velocity
                   options:(UIViewAnimationOptions)options
-               completion:(void(^)(void))completion{
+               completion:(nullable void(^)(void))completion{
     
     CGAffineTransform transformFrom = self.transform;
     CGAffineTransform transformTo = self.transform;
@@ -39,7 +39,7 @@
 }
 
 + (void)animateViews:(NSArray<UIView *> *)views
-          animations:(NSArray<Animation *> *)animations
+          animations:(nullable NSArray<Animation *> *)animations
             reversed:(BOOL)reversed
         initialAlpha:(CGFloat)initialAlpha
           finalAlpha:(CGFloat)finalAlpha
@@ -48,7 +48,7 @@
         dampingRatio:(CGFloat)dampingRatio
             velocity:(CGFloat)velocity
              options:(UIViewAnimationOptions)options
-          completion:(void(^)(void))completion{
+          completion:(nullable void(^)(void))completion{
     if(views.count<=0){
         completion();
         return;

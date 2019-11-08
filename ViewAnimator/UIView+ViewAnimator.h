@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (ViewAnimator)
-- (void)animateAnimations:(NSArray<Animation *> *)animations
+- (void)animateAnimations:(nullable NSArray<Animation *> *)animations
                  reversed:(BOOL)reversed
                  initialAlpha:(CGFloat)initialAlpha
                finalAlpha:(CGFloat)finalAlpha
@@ -21,10 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
              dampingRatio:(CGFloat)dampingRatio
                  velocity:(CGFloat)velocity
                   options:(UIViewAnimationOptions)options
-               completion:(void(^)(void))completion;
+               completion:(nullable void(^)(void))completion;
 
 + (void)animateViews:(NSArray<UIView *> *)views
-                animations:(NSArray<Animation *> *)animations
+                animations:(nullable NSArray<Animation *> *)animations
                  reversed:(BOOL)reversed
              initialAlpha:(CGFloat)initialAlpha
                finalAlpha:(CGFloat)finalAlpha
@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
              dampingRatio:(CGFloat)dampingRatio
                  velocity:(CGFloat)velocity
                   options:(UIViewAnimationOptions)options
-               completion:(void(^)(void))completion;
+               completion:(nullable void(^)(void))completion;
                 
 @end
 
