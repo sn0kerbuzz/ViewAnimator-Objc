@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSArray<UICollectionViewCell *> *)visibleCellsInSection:(NSInteger)section;
 - (NSArray<UICollectionViewCell *> *)orderedVisibleCellsInSection:(NSInteger)section;
+- (NSArray<UIView *> *)orderedVisibleCellsContentViewsInSection:(NSInteger)section;
 
 @end
 

@@ -40,6 +40,17 @@
     return orderedVisibleCellsInSection;
 }
 
+- (NSArray<UIView *> *)orderedVisibleCellsContentViewsInSection:(NSInteger)section {
+    NSArray *orderedVisibleCellsInSection = [self orderedVisibleCellsInSection:section];
+
+    NSMutableArray *orderedVisibleCellsContentView = [NSMutableArray array];
+    [orderedVisibleCellsInSection enumerateObjectsUsingBlock:^(UICollectionViewCell *cell, NSUInteger idx, BOOL *stop) {
+        [orderedVisibleCellsContentView addObject:cell.contentView];
+    }];
+
+    return orderedVisibleCellsContentView;
+}
+
 -(NSArray<UICollectionViewCell *> *)orderedVisibleCells{
 
     NSArray *visibleCells = self.visibleCells;
