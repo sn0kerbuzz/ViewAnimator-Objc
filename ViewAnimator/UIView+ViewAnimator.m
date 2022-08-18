@@ -52,7 +52,10 @@
              options:(UIViewAnimationOptions)options
           completion:(nullable void(^)(void))completion{
     if(views.count<=0){
-        completion();
+        if (completion != nil) {
+            completion();
+        }
+
         return;
     }
     dispatch_group_t group = dispatch_group_create();
