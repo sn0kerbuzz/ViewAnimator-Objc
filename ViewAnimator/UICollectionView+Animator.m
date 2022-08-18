@@ -10,8 +10,7 @@
 
 @implementation UICollectionView (Animator)
 
-- (NSArray<UICollectionViewCell *> *)visibleCellsInSection:(NSInteger)section{
-
+- (NSArray<UICollectionViewCell *> *)visibleCellsInSection:(NSInteger)section {
     NSArray *visibleCells = self.visibleCells;
 
     NSMutableArray *visibleCellsInSection = [NSMutableArray array];
@@ -28,9 +27,9 @@
 }
 
 - (NSArray<UICollectionViewCell *> *)orderedVisibleCellsInSection:(NSInteger)section {
-	NSArray *visibleCellsInSection = [self visibleCellsInSection:section];
+    NSArray *visibleCellsInSection = [self visibleCellsInSection:section];
 
-	NSArray *orderedVisibleCellsInSection = [visibleCellsInSection sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+    NSArray *orderedVisibleCellsInSection = [visibleCellsInSection sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSIndexPath *path1 = [self indexPathForCell:obj1];
         NSIndexPath *path2 = [self indexPathForCell:obj2];
 
@@ -51,8 +50,7 @@
     return orderedVisibleCellsContentView;
 }
 
--(NSArray<UICollectionViewCell *> *)orderedVisibleCells{
-
+- (NSArray<UICollectionViewCell *> *)orderedVisibleCells {
     NSArray *visibleCells = self.visibleCells;
 
     NSArray *sortedVisibleCells = [visibleCells sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -64,4 +62,5 @@
 
     return sortedVisibleCells;
 }
+
 @end
